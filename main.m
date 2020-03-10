@@ -25,7 +25,7 @@ X=CentreDeMasse(origine,x,y,q1,q2)
 %% Ex 2
 P = [1.5; 1; 0;1]
 Xp= [0.1;0.1;0.1;1]
-Tsup=20;
+Tsup=0.5;
 TrajectoireCDM( X,Xp, P, Tsup );
 
 %% Ex 2.2
@@ -37,24 +37,35 @@ p3=[0.6 0.2 0 1]';
 p4=[0.9 0 0 1]';
 p=[p0 p1 p2 p3 p4];
 
+%position
+Pos1=[0 0 1.023 1]';
+Pos2=[0 0.1 1.023 1]';
+Pos3=[0.15 0.1 1.023 1]';
+Pos4=[0.45 0.1 1.023 1]';
+Pos5=[0.75 0.1 1.023 1]';
+Pos6=[1.05 0.1 1.023 1]';
+Pos=[Pos1 Pos2 Pos3 Pos4 Pos5 Pos6];
+
 figure(4)
 hold on
 axis([-0.5 1.5 -0.5 1.5])
 figure(5)
     hold on
+v=[];
+Xnew=[0 0 1.023]';
 
-Xnew=[0.1 0.1 1.023]'
 for i=1:4
 %     figure(4)
 %     plot(p(1,i),p(2,i),'ro');
     %je stock la position du CDM
     tail=size(Xnew);
-    origine=Xnew(:,tail(2))
+    %origine=Xnew(:,tail(2))
+    Tsup=0.5;
     %je prend  
-     
-    Tsup=0.3;
+    v=vitesse(Pos(:,i+1), Pos(:,i),p(:,i),Tsup);
+       
    %Tsup=1; 
-   Xnew=[Xnew TrajectoireCDM(origine,[0.3 0.3 0 1]',p(:,i+1),Tsup)];
+   Xnew=[Xnew TrajectoireCDM(Pos(:,i),[v(1) v(2) 0 1]',p(:,i),Tsup)];
   
 end
   figure(40)
