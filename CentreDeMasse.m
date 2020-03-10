@@ -30,6 +30,11 @@ plot(origine(1)+x, origine(2)+y,'xr');
 axis([0 6 2 7])
 line([origine(1)+x origine(1)+x+l1*cos(q1)],[origine(2)+y origine(2)+y+l1*sin(q1)],'Color','red','LineWidth',2);
 line([origine(1)+x+l1*cos(q1) origine(1)+x+l1*cos(q1)+l2*cos(q1+q2)],[origine(2)+y+l1*sin(q1) origine(2)+y+l1*sin(q1)+l2*sin(q1+q2)],'Color','green','LineWidth',2);
+    xlabel('X');
+    ylabel('Y');
+    grid on
+    title('Evolution of the CDM position');
+
 %Calcul Jacobienne 
 %----------------------------------------------------
 %           Il peut y avoir un problème de dimension
