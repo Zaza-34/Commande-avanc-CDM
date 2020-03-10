@@ -5,7 +5,10 @@
 %% Problèmes possiblle
 %Voir Jacobienne dans CentreDeMasse
 %Voir les valeur de Tsup Xp et P à metttre dans le main
-
+%%
+clf
+clc
+clear all
 %% EX 1
 origine=[0;0]
 x=2;

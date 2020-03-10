@@ -39,17 +39,17 @@ figure(2)
 subplot(3,1,1)
 y1 = Xnew(1,:);
 plot(y1);
-title(' ZMP: X Evolution')
+title(' CdM: X Evolution')
 
 subplot(3,1,2)
 y2 = Xnew(2,:);
 plot(y2);
-title(' ZMP: Y Evolution')
+title(' CdM: Y Evolution')
 
 subplot(3,1,3)
 y3 = Xnew(3,:);
 plot(y3);
-title(' ZMP: Z Evolution')
+title(' CdM: Z Evolution')
 
 %% Dessin de la trajectoire de la jambe
    
