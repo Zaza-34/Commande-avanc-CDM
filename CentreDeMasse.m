@@ -2,7 +2,7 @@ function [ X ] = CentreDeMasse(origine,x,y,q1,q2)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 %Masse du corp
-%% 
+%% Variable
 
 m1 = 1;
 m2 = 0.5;
@@ -22,12 +22,12 @@ X= [X;0;1];
 %Je rafraichie l'image
 hold off
 plot(0,0)
-%J'affiche l'volution du centre de masse
+%J'affiche l'évolution du centre de masse
 figure(1)
 hold on
 plot(X(1),X(2),'bo');
 plot(origine(1)+x, origine(2)+y,'xr');
-axis([0 6 2 7])
+axis([-1 6 -1 7])
 line([origine(1)+x origine(1)+x+l1*cos(q1)],[origine(2)+y origine(2)+y+l1*sin(q1)],'Color','red','LineWidth',2);
 line([origine(1)+x+l1*cos(q1) origine(1)+x+l1*cos(q1)+l2*cos(q1+q2)],[origine(2)+y+l1*sin(q1) origine(2)+y+l1*sin(q1)+l2*sin(q1+q2)],'Color','green','LineWidth',2);
     xlabel('X');
@@ -35,11 +35,12 @@ line([origine(1)+x+l1*cos(q1) origine(1)+x+l1*cos(q1)+l2*cos(q1+q2)],[origine(2)
     grid on
     title('Evolution of the CDM position');
 
-%Calcul Jacobienne 
+  %% Calcul Jacobienne 
 %----------------------------------------------------
-%           Il peut y avoir un problème de dimension
+%        
 %-----------------------------------------------------
 Jcdm = [1 0 -c1*sin(q1)-c2*sin(q1+q2) -c2*sin(q1+q2);
-        0 1 c1*cos(q1)+c2*cos(q1+q2)  c2*cos(q1+q2)];    
+        0 1 c1*cos(q1)+c2*cos(q1+q2)  c2*cos(q1+q2)]; 
+ 
 end
 

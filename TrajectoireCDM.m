@@ -1,9 +1,9 @@
-function [ Xnew ] = TrajectoireCDM( X,Xp,P, Tsup, color )
+function [ Xnew] = TrajectoireCDM( X,Xp,P, Tsup, color )
 %Calcul d'une trajcectoire à partir du ZMP
-%X position intial du CDM
-%Xp : vitesse initial du CDM
-%P position du ZMP
-%Tsup temps du mvt
+%X : position intiale du CDM
+%Xp : vitesse initiale du CDM
+%P : position du ZMP
+%Tsup : temps du mvt
 %color : 0=red, 1=blue 
 %% Data
 %
@@ -17,6 +17,7 @@ x=0;
 y=0;
 z=0;
 Xnew=[];
+vitGraph=[];
 for i=0:5:100
     t=Tsup*i/100;
     x =(X(1)-P(1))*cosh(t/Tc)+Tc*Xp(1)*sinh(t/Tc)+P(1);
@@ -34,6 +35,9 @@ for i=0:5:100
     else
         p1.color = 'blue';
     end
+    xp=(x-X(1))/t;
+    yp=(y-X(2))/t;
+    vitGraph=[vitGraph [ xp yp sqrt((xp^2)+(yp^2))]'];
 end
 figure(2)
 subplot(3,1,1)
@@ -51,8 +55,29 @@ y3 = Xnew(3,:);
 plot(y3);
 title(' CdM: Z Evolution')
 
-%% Dessin de la trajectoire de la jambe
-   
+%% Dessin de la trajectoire de la vitesse   
+%     figure(7)
+%     hold on
+% subplot(2,2,1)
+% x1 = vitGraph(1,:);
+% plot(x1);
+% title('X speed')
+% xlabel('step number');
+% ylabel('speed');
+% 
+% subplot(2,2,2)
+% y1 = vitGraph(2,:);
+% plot(y1);
+% title('Y speed')
+% xlabel('step number');
+% ylabel('speed');
+% 
+%  subplot(2,2,[3,4])
+%  y3 = vitGraph(3,:);
+%  plot(y3);
+%  title('vitesse absolue')
+% xlabel('step number');
+% ylabel('speed');
 
 
 %% Plot de l'évoluton de la position
