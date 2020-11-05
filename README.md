@@ -16,10 +16,13 @@ With c the contact point vector and f the force vector of the point at the posit
 The file TrajectoireCDM is used in order to obtain the trajectory of the CoM (Center of Mass).
 
 The result is this graph:
+
+
+
+
 ![](ImageCDM/Result.png)
 
-
-
+In black you have the position of the robot foot in each times, in green you have the position of the CoM in 2D axis, finnaly you have the vector of the CoM in red (when the robot moves his right foot) and blue (when the robot moves his left foot).
 
 
 
