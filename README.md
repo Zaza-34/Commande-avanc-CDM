@@ -9,10 +9,14 @@ The Jacobian formula used to calcul the center of mass is the next one:
 ![](ImageCDM/Jacobian.png)
 
 The file ZMP.m is used to resolve the next equation:
+![](ImageCDM/ZMP.png)
 
 With c the contact point vector and f the force vector of the point at the position of the vector c.
 
 The file TrajectoireCDM is used in order to obtain the trajectory of the CoM (Center of Mass).
+
+The result is this graph:
+![](ImageCDM/Result.png)
 
 
 
